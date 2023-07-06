@@ -33,7 +33,7 @@ class ArpSender:
         self.sock = socket.socket(
             socket.AF_PACKET, socket.SOCK_RAW, socket.htons(0x0806)
         )
-        # self.sock.settimeout(self.TIMEOUT)
+        self.sock.settimeout(self.TIMEOUT)
         self.sock.bind((INTERFACE, 0))
         self.build_arp()
         self.send_arp()
